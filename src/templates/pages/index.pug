@@ -1,0 +1,142 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Diperia
+    meta(name="viewport", content="width=1350, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&amp;subset=cyrillic" rel="stylesheet")
+    link(rel="stylesheet", href="assets/css/main.min.css")
+
+  body
+    div.wrapper
+
+      block variables
+        - var cls = 'header--landing'
+        - var footerCls = 'footer--landing'
+
+      block content
+        include ../common/vars
+
+        include ../components/header
+
+        .main
+          .bg
+            img.bg__img(src="./assets/img/bg2.png")
+            
+            .container.main__container
+              .main__info
+                .title
+                  h1.title__name Diperia
+                  h2.title__description role play
+
+                .subtitle Ваше мнение  - залог наших решений
+
+                .main__description Краткое описание сервера в несколько строчек, сразу ниже, идет мониторинг и iP адресс игрового сервера <span class="main__description--accent"> Diperia Role Play </span>
+
+                .main__buttons
+                  .main__ip 0.000.00.000:7777
+                    .main__players-amount 250/500
+
+                  .main__play Начать играть
+                    a.main__rules-link(href="#") Правила сервера
+
+          .main__start-play.start-play
+            .top
+            .start-play__title Как начать играть?
+            .start-play__subtitle Всё понятно и просто...
+
+            .start-play__video-block
+              .start-play__gradient
+              .start-play__arrow
+
+              .start-play__cont
+                img.start-play__img(src="./assets/img/video.jpg")
+                iframe.start-play__video(width="560" height="315" src="https://www.youtube.com/embed/-JHHSbfpFsI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+            
+            .start-play__btn Как начать игру?
+
+          .main__news.news
+            .news__title Новости проекта
+            .news__subtitle Будь всегда вкурсе
+
+            .news__cont
+              .news__arrow-left
+
+              ul.news__list
+                li.news__item
+                  .news__prewiew
+                    img.news__img(src="./assets/img/news.jpg")
+                  .news__info
+                    .news__name Заголовок игровой новости #1
+                    .news__text.
+                      Кратое новосное описаени в несколько строк, очень информативно
+                      и полезно новым игрокам проекта, советуем к прочтению, обновления
+                      каждую неделю, следите за новостями и получайте новости первыми
+                    .news__container-link
+                      a.news__link(href="#") Подробнее..
+
+                li.news__item
+                  .news__prewiew
+                    img.news__img(src="./assets/img/news.jpg")
+                  .news__info
+                    .news__name Заголовок игровой новости #2
+                    .news__text.
+                      Кратое новосное описаени в несколько строк, очень информативно
+                      и полезно новым игрокам проекта, советуем к прочтению, обновления
+                      каждую неделю, следите за новостями и получайте новости первыми
+                    .news__container-link
+                      a.news__link(href="#") Подробнее..
+
+              .news__arrow-right
+
+          .main__donat.donat
+            .container
+              .donat__title Пополнение счета
+              .donat__subtitle.
+                Сайт рыбатекст поможет дизайнеру, верстальщику,
+                вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском
+
+              .donat__cont
+                .donat__left
+                  .donat__form.form
+                  
+                    form.form__inner#pdonat(method="post" action="")
+                      .form__cont
+
+                        select.form__select(required)
+                          option(value="1") Сервер #1
+                          option(value="2") Сервер #2
+                          option(value="3") Сервер #3
+                          option(value="4") Сервер #4
+                          option(value="5") Сервер #5
+
+                        input.form__input.form__input--opacity(type="text" name="name" id="name" placeholder="Введите игровое имя")
+                        input.form__input.form__input--red(type="text" name="summ" id="summ" placeholder="Введите сумму пополнения" value="500")
+
+                        .form__info.
+                          Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более
+                        .form__buttons
+                          button.form__btn(type="submit") Пополнить счёт
+
+                  .donat__container-link
+                    a.donat__fow-what(href="#") Для чего нужны депозиты?
+
+                .donat__right.exchange
+
+                  .exchange__course-info Курс обмена реальных рублей на депозиты:
+                  .exchange__course 1 рубль = 1 депозит
+
+                  .exchange__bonuse
+                    ul.exchange__list
+                      li.exchange__item
+                        span.exchange__percent +3%
+                        span.exchange__condition При пополнении счета от 301 рубля
+                      li.exchange__item
+                        span.exchange__percent +5%
+                        span.exchange__condition При пополнении счета от 501 рубля
+                      li.exchange__item
+                        span.exchange__percent +8%
+                        span.exchange__condition При пополнении счета от 801 рубля
+
+        include ../components/footer

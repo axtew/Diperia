@@ -1,0 +1,520 @@
+.main {
+  position: relative;
+}
+
+.main__container {
+  position: absolute;
+  top: 10%;
+  left: 150px;
+  transform: translateY(-50%);
+
+  @media screen and (min-width: 1500px) {
+    left: 210px;
+    top: 11%;
+  }
+
+  @media screen and (min-width: 1760px) {
+    left: 240px;
+    top: 12%;
+  }
+
+  @media screen and (min-width: 1900px) {
+    left: 290px;
+    top: 13%;
+  }
+}
+
+.main__info {
+  z-index: 10;
+  width: 465px;
+  color: #fff;
+  top: 20px;
+  left: 20px;
+}
+
+.title__name,
+.title__description {
+  display: inline-block;
+  font-size: 44px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 44px;
+}
+
+.title__name {
+  color: #c63232;
+  margin-right: 8px;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-left: 3px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.main__description {
+  margin-left: 3px;
+  line-height: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+
+.main__description--accent {
+  color: #c63232;
+}
+
+.main__buttons {
+  margin-left: 10px;
+  display: flex;
+}
+
+.main__play,
+.main__ip {
+  border-radius: 5px;
+  width: 180px;
+  height: 45px;
+  line-height: 45px;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.main__ip {
+  color: #fff;
+  background-color: #c63232;
+  margin-right: 74px;
+}
+
+.main__players-amount {
+  position: absolute;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 75px;
+  height: 21px;
+  font-size: 12px;
+  color: #c63232;
+  line-height: 21px;
+  text-align: center;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+}
+
+.main__play {
+  background-color: #fff;
+  color: #c63232;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    background-color: #dfdfdf;
+  }
+}
+
+.main__rules-link {
+  position: absolute;
+  font-size: 9px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  color: #c63232;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+}
+
+.bg__img {
+  width: 100%;
+  min-width: 1300px;
+  // position: absolute;
+}
+
+.start-play {
+  background-image: url('../img/bg3.png');
+  background-size: cover;
+  margin-top: -480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::after {
+    content: '';
+    width: 100%;
+    background: linear-gradient(90deg, transparent 10%, #151213 30%, #151213 70%, transparent 90%);
+    opacity: 0.1;
+    height: 7px;
+  }
+}
+
+.top {
+  width: 100%;
+  height: 1px;
+}
+
+.start-play__title,
+.news__title,
+.donat__title {
+  color: #c63232;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.start-play__title {
+  margin-top: 260px;
+}
+
+.start-play__subtitle,
+.news__subtitle {
+  color: #262022;
+  font-size: 14px;
+  margin-bottom: 50px;
+  line-height: 14px;
+}
+
+.start-play__video-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  width: 575px;
+  overflow: hidden;
+  background-color: #c63232;
+  clip-path: polygon(10% 29%, 99% 1%, 90% 100%, 0 100%);
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.start-play__video {
+  display: none;
+}
+
+.start-play__gradient {
+  position: absolute;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(100% 100%, #c63232, #c63232 41%, transparent 50%);
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 50%;
+  opacity: .45;
+}
+
+.start-play__arrow {
+  position: absolute;
+  display: inline-block;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  border: 15px solid #fff;
+  z-index: 10;
+  cursor: pointer;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 32px;
+    height: 36px;
+    background-image: url('../img/play.png');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.start-play__img {
+  opacity: .59;
+}
+
+.start-play__btn {
+  background-color: #272022;
+  margin-left: -50px;
+  margin-bottom: 50px;
+  padding: 13px 65px;
+  transform: rotate(-2deg);
+  color: #c63232;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  clip-path: polygon(3% 0, 100% 0, 87% 100%, 9% 100%);
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    background-color: darken($color: #272022, $amount: 7%);
+    transform: rotate(2deg);
+  }
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news__title {
+  margin-top: 35px;
+}
+
+.news__subtitle {
+  margin-bottom: 72px;
+}
+
+.news__cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 165px;
+}
+
+.news__arrow-left,
+.news__arrow-right {
+  width: 39px;
+  height: 79px;
+  background-image: url('../img/arrow.png');
+  opacity: .34;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.news__arrow-left {
+  margin-right: 50px;
+}
+
+.news__arrow-right {
+  transform: rotate(180deg);
+  margin-left: 50px;
+}
+
+.news__list {
+  display: flex;
+  width: 810px;
+  overflow: hidden;
+}
+
+.news__item {
+  display: flex;
+  align-items: center;
+  transform: translateX(0px);
+}
+
+.news__prewiew {
+  width: 280px;
+  height: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.news__img {
+  height: 100%;
+}
+
+.news__info {
+  width: 500px;
+}
+
+.news__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c63232;
+  margin-bottom: 12px;
+}
+
+.news__text {
+  color: #2a1f1f;
+  line-height: 19px;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+}
+
+.news__container-link {
+  text-align: center;
+}
+
+.news__link {
+  margin: 0 auto;
+  color: #c63232;
+  text-align: center;
+}
+
+.donat {
+  background-image: url('../img/donat_bg.jpg');
+  background-size: cover;
+
+  .container {
+    padding-bottom: 89px;
+    padding-top: 57px;
+  }
+}
+
+.donat__title {
+  padding-top: 57px;
+  margin-bottom: 19px;
+}
+
+.donat__subtitle {
+  color: #fff;
+  text-align: center;
+  width: 830px;
+  margin: 0 auto;
+  line-height: 19px;
+  margin-bottom: 85px;
+}
+
+.donat__cont {
+  display: flex;
+  justify-content: center;
+}
+
+.donat__left {
+  margin-right: 170px;
+}
+
+.donat__form {
+  .form__inner {
+    margin-top: 39px;
+  }
+
+  .form__cont,
+  .form__buttons {
+    width: 335px;
+  }
+
+  .form__select {
+    margin-bottom: 12px;
+    padding: 13px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .form__input {
+    background-color: #fff;
+    margin-bottom: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 13px 20px;
+
+    &--red {
+      background-color: #c63232;
+      color: #fff;
+      margin-bottom: 19px;
+      
+      @include placeholder {
+        color: #fff;
+      }
+    }
+
+    &--opacity {
+      opacity: .36;
+      color: #1c1f22;
+
+      @include placeholder {
+        color: #1c1f22;
+      }
+    }
+  }
+
+  .form__info {
+    font-size: 12px;
+    color: #fff;
+    margin: 0 auto;
+    width: 303px;
+    line-height: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form__btn {
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 14px 20px;
+    transition: .3s;
+
+    &:hover {
+      background-color: darken($color: #c63232, $amount: 7%);
+    }
+  }
+
+  .form__cont {
+    margin-bottom: 11px;
+  }
+}
+
+.donat__fow-what {
+  color: #fff;
+  font-weight: 500;
+  opacity: .27;
+  text-align: center;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.donat__container-link {
+  text-align: center;
+}
+
+.donat__right {
+  width: 355px;
+}
+
+.exchange__course-info {
+  color: #c63232;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+.exchange__course {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 19px;
+}
+
+.exchange__item {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.exchange__percent {
+  display: inline-block;
+  font-size: 18px;
+  background-color: #c63232;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 5px;
+  border-radius: 10px;
+  margin-right: 19px;
+}

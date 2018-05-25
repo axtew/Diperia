@@ -1,0 +1,57 @@
+extends ../template
+
+block variables
+  - var title = 'Личный кабинет'
+
+block content
+  include ../common/vars
+  include ../components/header
+
+  .main
+    .container
+      .main__title Личный кабинет
+      .main__cont
+        .main__left.profile
+
+          .profile__name
+            .profile__name-text Egor_Mekendez
+
+          .profile__photo
+            .profile__logo
+            img.profile__img(src="./assets/img/avatar.png")
+
+          .profile__lvl
+            span.profile__lvl-value 10 lvl
+            span.profile__exp 1000 exp
+
+          .profile__deposits
+            .profile__deposits-text Количество депозитов
+            .profile__deposits-amount 2648
+
+        .main__right.statistic
+          .statistic__subtitle Статистика персонажа
+          
+          .statistic__info
+            ul.statistic__list
+              each atribute in atributes
+                li.statistic__item
+                  span.statistic__atribute #{atribute[0]}
+                  span.statistic__value #{atribute[1]}
+
+          .statistic__driver.driver
+            .driver__title Категории прав:
+            ul.driver__list
+              li.driver__item.driver__item--active Категория A
+              li.driver__item Категория B
+              li.driver__item Категория C
+              li.driver__item.driver__item--active Категория D
+
+          .statistic__license.license
+            .license__title Лицензии:
+            ul.license__list
+              li.license__item Недвижимость
+              li.license__item.license__item--active Бизнес
+              li.license__item Оружие
+              li.license__item Возд. перевозка
+
+  include ../components/footer

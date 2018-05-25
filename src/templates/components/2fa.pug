@@ -1,0 +1,27 @@
+.settings__info.settings__qr-info
+  p.
+    Установите на свой мобильный телефон приложение google Authenticator,
+    сканируйте QR код ниже или используйте ручной ввод.
+    Введите полученный одноразовый код, в соответствующее поле
+
+.settings__2fa
+  .settings__qr.qr
+    .qr__info
+      | Сканируйте код
+      br
+      | с помощью google Authenticator
+    .qr__image
+      img.qr__img(src="./assets/img/QR.png")
+    .qr__code Или используйте ручной ввод:
+    .qr__code-num 5613416465
+    
+  .settings__form.form
+    form.form__inner#2fa(method="post" action="")
+      .form__cont
+        .form__row
+          input.form__input(type="text" name="2fa-code" id="2fa-code" placeholder="Введите полученный код")
+        
+        input.form__input(type="password" name="2fa-pass" id="2fa-pass" placeholder="Введите пароль от аккаунта")
+      
+      .form__buttons
+        button.form__btn(type="submit") Установить

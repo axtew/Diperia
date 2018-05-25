@@ -1,0 +1,27 @@
+footer.footer(class=`${footerCls}`)
+  .footer__top
+    .container
+      .footer__left
+        a.footer__logo.logo(href="#")
+          img.logo__img(src="./assets/img/logo.png")
+
+      .footer__right
+        .footer__nav.nav
+          ul.nav__list
+            li.nav__item
+              a.nav__link.nav__link--active(href="#") Главная
+            each section in sections
+              li.nav__item
+                a.nav__link(href="#") #{section}
+
+  .footer__bottom
+    .container
+      .footer__copyrights.copyrights Все права под защитой, копирование запрещено / design by fleetch
+      .footer__socials.socials
+        .footer__socials.socials
+          ul.socials__list
+            each social in ['vk', 'youtube', 'info']
+              li.socials__item
+                a.socials__link(href="#")
+                  svg.socials__img(width="20" height="20")
+                    use(xlink:href=`./assets/img/sprite.svg#${social}`)

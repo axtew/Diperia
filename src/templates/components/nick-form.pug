@@ -1,0 +1,15 @@
+.settings__info
+  p Обратите внимание, что никнейм должен соответствовать
+  a(href="#") правилам нашего сервера 
+  p Формат никнейма, должен быть следующем : Имя_Фамилия на латинице. Запрещено использовать имена известных личностей.
+
+.settings__form.form
+  form.form__inner#nick(method="post" action="")
+    .form__cont
+      .form__row
+        input.form__input(type="password" name="nick-pass" id="nick-pass" placeholder="Введите пароль от профиля")
+      
+      input.form__input(type="text" name="new-nick" id="new-nick" placeholder="Введите желаемое имя (Name_name)")
+    
+    .form__buttons
+      button.form__btn(type="submit") Изменить

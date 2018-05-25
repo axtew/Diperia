@@ -1,0 +1,138 @@
+.header,
+.footer {
+  background-color: #161e21;
+
+  * {
+    white-space: nowrap;
+  };
+};
+
+.header {
+  margin-bottom: 60px;
+
+  .container {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  };
+}
+
+.header--landing {
+  margin-bottom: 0;
+}
+
+.header__left,
+.footer__left,
+.header__right,
+.footer__right {
+  display: flex;
+  align-items: center;
+};
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+};
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.header__logo {
+  .logo__img {
+    margin-right: 19px;
+  };
+}
+
+.logo__img {
+  width: 65px;
+  height: 64px;
+};
+
+.logo__text-top,
+.logo__text-bottom {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 18px;
+  letter-spacing: 1.3px;
+}
+
+.logo__text-top {
+  font-size: 22px;
+  color: #c63232;
+  font-weight: bold;
+}
+
+.logo__text-bottom {
+  line-height: 16px;
+  letter-spacing: 1.6px;
+}
+
+.nav__item {
+  margin-right: 63px;
+  position: relative;
+
+  &:last-child {
+    margin-right: 0;
+  };
+};
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  transition: .3s;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(100% 100%, transparent, transparent);
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11px;
+    height: 11px;
+    background-color: transparent;
+    transition: .3s;
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  &--active,
+  &:hover {
+    color: #c63232;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      background: radial-gradient(100% 100%, #fff, #fff 12%, transparent 50%);
+    }
+
+    &::after {
+      background-color: #c63232;
+    }
+  }
+};

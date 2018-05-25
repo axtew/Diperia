@@ -1,0 +1,35 @@
+extends ../template
+
+block variables
+  - var title = 'Настройки'
+
+block content
+  include ../common/vars
+  include ../components/header
+
+  .main.settings
+    .container
+      .main__title.settings__title Настройки аккаунта
+      .settings__cont
+        .settings__nav
+          ul.settings__nav-list
+            li.settings__nav-item.settings__nav-item--active Смена пароля
+            li.settings__nav-item Установка 2FA
+            li.settings__nav-item Смена почты
+            li.settings__nav-item Смена ника
+            li.settings__nav-item Активность
+
+        .settings__inner
+          ul.settings__inner-list
+            li.settings__inner-item.settings__inner-item--active
+              include ../components/pass-form
+            li.settings__inner-item
+              include ../components/2fa
+            li.settings__inner-item
+              include ../components/mail-form
+            li.settings__inner-item
+              include ../components/nick-form
+            li.settings__inner-item
+              include ../components/activity
+
+  include ../components/footer
