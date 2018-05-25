@@ -38,9 +38,9 @@ const paths = {
     src: './src/img/icons/*.svg',
     dest: './docs/assets/img/'
   },
-  fonts: {
-    src: './src/fonts/**/*.*',
-    dest: './docs/assets/fonts/'
+  scripts: {
+    src: './src/js/**/*.*',
+    dest: './build/assets/scripts/'
   }
 }
 
@@ -58,8 +58,8 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.templates.src, templates);
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.fonts.src, fonts);
   gulp.watch(paths.svg.src, sprite);
+  gulp.watch(paths.scripts.src, scripts);
 }
 
 // сервер
@@ -103,10 +103,12 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
-// перенос шрифтов
-function fonts() {
-  return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest));
+// обработка js
+function scripts() {
+  return gulp.src('./src/js/main.js')
+    .pipe(gulpWebpack(webpackConfig, webpack))
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(reload({ stream: true }));
 }
 
 // компиляция pug
@@ -148,11 +150,11 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
-exports.fonts = fonts;
 exports.sprite = sprite;
+exports.scripts = scripts;
 
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, templates, images, sprite, fonts),
+  gulp.parallel(styles, templates, images, sprite),
   gulp.parallel(watch, server)
 ));
