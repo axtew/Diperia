@@ -13,7 +13,6 @@ html(lang="ru")
 
       block variables
         - var cls = 'header--landing'
-        - var footerCls = 'footer--landing'
 
       block content
         include ../common/vars
@@ -32,19 +31,22 @@ html(lang="ru")
 
                 .subtitle Ваше мнение  - залог наших решений
 
-                .main__description Краткое описание сервера в несколько строчек, сразу ниже, идет мониторинг и iP адресс игрового сервера <span class="main__description--accent"> Diperia Role Play </span>
+                .main__description Один из самых уникальных проектов в Криминальной России – <span class="main__description--accent"> Diperia Role Play. </span>У нас Вы найдёте интересные системы, окунётесь в жизнь быстроразвивающейся области и сможете построить свою жизнь так, как хотите Вы!
 
                 .main__buttons
                   .main__ip 0.000.00.000:7777
                     .main__players-amount 250/500
 
-                  .main__play Начать играть
+                  .main__play
+                    .main__play-btn Начать играть
                     a.main__rules-link(href="#") Правила сервера
+
+          include ../components/help
 
           .main__start-play.start-play
             .top
             .start-play__title Как начать играть?
-            .start-play__subtitle Всё понятно и просто...
+            .start-play__subtitle В данном разделе Вы сможете получить ответы на множество популярных вопросов, а также задать интересующй Вас вопрос.
 
             .start-play__video-block
               .start-play__gradient
@@ -58,13 +60,13 @@ html(lang="ru")
 
           .main__news.news
             .news__title Новости проекта
-            .news__subtitle Будь всегда вкурсе
+            .news__subtitle В данном разделе Вы сможете узнать самые свежие и интересные новости о нашем проекте. Будь в курсе всех событий! 
 
             .news__cont
               .news__arrow-left
 
               ul.news__list
-                li.news__item
+                li.news__item.news__item--active
                   .news__prewiew
                     img.news__img(src="./assets/img/news.jpg")
                   .news__info
@@ -88,14 +90,39 @@ html(lang="ru")
                     .news__container-link
                       a.news__link(href="#") Подробнее..
 
+                li.news__item
+                  .news__prewiew
+                    img.news__img(src="./assets/img/news.jpg")
+                  .news__info
+                    .news__name Заголовок игровой новости #3
+                    .news__text.
+                      Кратое новосное описаени в несколько строк, очень информативно
+                      и полезно новым игрокам проекта, советуем к прочтению, обновления
+                      каждую неделю, следите за новостями и получайте новости первыми
+                    .news__container-link
+                      a.news__link(href="#") Подробнее..
+
+                li.news__item
+                  .news__prewiew
+                    img.news__img(src="./assets/img/news.jpg")
+                  .news__info
+                    .news__name Заголовок игровой новости #4
+                    .news__text.
+                      Кратое новосное описаени в несколько строк, очень информативно
+                      и полезно новым игрокам проекта, советуем к прочтению, обновления
+                      каждую неделю, следите за новостями и получайте новости первыми
+                    .news__container-link
+                      a.news__link(href="#") Подробнее..
+
               .news__arrow-right
 
           .main__donat.donat
             .container
               .donat__title Пополнение счета
               .donat__subtitle.
-                Сайт рыбатекст поможет дизайнеру, верстальщику,
-                вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском
+                В данном разедел Вы сможете приобрести депозиты за реальные деньги.
+                Мы принимаем многие виды платежей: банковские карты, QIWI Кошелёк, WebMoney,
+                Яндекс. Деньги, мобильный счёт и другие.
 
               .donat__cont
                 .donat__left
@@ -115,7 +142,8 @@ html(lang="ru")
                         input.form__input.form__input--red(type="text" name="summ" id="summ" placeholder="Введите сумму пополнения" value="500")
 
                         .form__info.
-                          Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более
+                          Перед тем, как пополнить Ваш игровой счёт, убедитесь в правильности введённых Вами данных.
+                          Нажмиая на кнопку «Пополнить», Вы соглашаетесь с <a href="#" class="form__info--accent"> Публичной офертой.</a>
                         .form__buttons
                           button.form__btn(type="submit") Пополнить счёт
 
@@ -140,3 +168,5 @@ html(lang="ru")
                         span.exchange__condition При пополнении счета от 801 рубля
 
         include ../components/footer
+
+    script(src="./assets/scripts/bandle.js")

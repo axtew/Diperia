@@ -58,7 +58,7 @@
 }
 
 .settings__info {
-  width: 636px;
+  width: 670px;
   font-size: 14px;
   opacity: .68;
   font-weight: 500;
@@ -155,6 +155,7 @@
 
 .settings__qr-info {
   margin-bottom: 35px;
+  width: 636px;
 }
 
 .settings__2fa {
@@ -203,9 +204,10 @@
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, .33);
-  padding: 10px 5px;
+  padding: 7px 5px;
   padding-left: 89px;
   position: relative;
+  line-height: 16px;
 
   &--autorization {
     .activity__icon {
@@ -253,4 +255,35 @@
   &--active {
     display: block;
   }
+}
+
+.activity__act {
+  &::after {
+    content: '\00A0|\00A0';
+    display: inline-block;
+  }
+}
+
+.activity__bottom {
+  color: #c63232;
+  font-size: 13px;
+}
+
+.activity__red-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--active {
+    background-color: #c63232;
+  }
+}
+
+.accent {
+  color: #c63232;
 }

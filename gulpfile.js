@@ -38,9 +38,13 @@ const paths = {
     src: './src/img/icons/*.svg',
     dest: './docs/assets/img/'
   },
+  fonts: {
+    src: './src/fonts/**/*.*',
+    dest: './docs/assets/fonts/'
+  },
   scripts: {
     src: './src/js/**/*.*',
-    dest: './build/assets/scripts/'
+    dest: './docs/assets/scripts/'
   }
 }
 
@@ -58,8 +62,9 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.templates.src, templates);
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.svg.src, sprite);
+  gulp.watch(paths.fonts.src, fonts);
   gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.svg.src, sprite);
 }
 
 // сервер
@@ -103,12 +108,10 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
-// обработка js
-function scripts() {
-  return gulp.src('./src/js/main.js')
-    .pipe(gulpWebpack(webpackConfig, webpack))
-    .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(reload({ stream: true }));
+// перенос шрифтов
+function fonts() {
+  return gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest));
 }
 
 // компиляция pug
@@ -141,6 +144,12 @@ function styles() {
     .pipe(gulp.dest(paths.styles.dest))
 }
 
+function scripts() {
+  return gulp.src('./src/js/main.js')
+    .pipe(gulpWebpack(webpackConfig, webpack))
+    .pipe(gulp.dest(paths.scripts.dest));
+}
+
 // очистка
 function clean() {
   return del(paths.root);
@@ -150,11 +159,12 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
-exports.sprite = sprite;
+exports.fonts = fonts;
 exports.scripts = scripts;
+exports.sprite = sprite;
 
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, templates, images, sprite),
+  gulp.parallel(styles, templates, scripts, images, sprite),
   gulp.parallel(watch, server)
 ));

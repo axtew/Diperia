@@ -4,4 +4,4 @@
 
 #### Страница с профилем https://axtew.github.io/Diperia/profile.html
 
-#### Страница с настройками https://axtew.github.io/Diperia/settints.html
+#### Страница с настройками https://axtew.github.io/Diperia/settings.html
