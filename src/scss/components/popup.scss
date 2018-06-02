@@ -24,7 +24,7 @@
   width: 50%;
   height: 100vh;
   background-color: #000;
-  opacity: .3;
+  opacity: .4;
 }
 
 .help-popup__bg-left {
@@ -41,8 +41,7 @@
   color: #fff;
   display: block;
   width: 1000px;
-  background: url('../img/logo_big.png') center no-repeat,
-              darken($color: #c63232, $amount: 10%);
+  background: url(../img/logo_big.png) center no-repeat;
   opacity: 0;
   border-radius: 5px;
 }
@@ -57,8 +56,9 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: darken($color: #c63232, $amount: 10%);
-  opacity: 0.4;
+  background: #9d2828;
+  opacity: 0.9;
+  border-radius: 5px;
 }
 
 .help-popup__close {
