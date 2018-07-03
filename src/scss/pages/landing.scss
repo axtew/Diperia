@@ -198,10 +198,6 @@
   position: relative;
 }
 
-.start-play__video {
-  display: none;
-}
-
 .start-play__gradient {
   position: absolute;
   display: inline-block;
@@ -410,7 +406,7 @@
 
   .form__select {
     margin-bottom: 12px;
-    padding: 13px 15px;
+    // padding: 13px 15px;
     outline: none;
     border: none;
     border-radius: 5px;

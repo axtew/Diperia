@@ -1,4 +1,4 @@
-import { WSAEWOULDBLOCK } from "constants";
+const formstyler = require('./jquery.formstyler.min');
 
 const settingsNavItem = $('.settings__nav-item'),
       settingsInnerItem = $('.settings__inner-item'),
@@ -14,7 +14,8 @@ const settingsNavItem = $('.settings__nav-item'),
       helpClose = $('.help-popup__close'),
       newsArrowLeft = $('.news__arrow-left'),
       newsArrowRight = $('.news__arrow-right'),
-      newsList = $('.news__list');
+      newsList = $('.news__list'),
+      formSelect = $('.form__select');
 
 settingsNavItem.on('click', function(e) {
   settingsNavItem.removeClass('settings__nav-item--active');
@@ -150,3 +151,5 @@ newsArrowRight.on('click', function(e) {
     $('.news__item').css({'-webkit-transform' : 'translateX(' + transform + '%)', 'transform' : 'translateX(' + transform + '%)'});
   }
 });
+
+formSelect.styler();

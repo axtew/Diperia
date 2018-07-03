@@ -1,13 +1,14 @@
 extends ../template
 
 block variables
-  - var title = 'Настройки'
+  - var title = 'Diperia RolePlay – Настройки аккаунта'
 
 block content
   include ../common/vars
   include ../components/header
 
   .main.settings
+    include ../components/help
     .container
       .main__title.settings__title Настройки аккаунта
       .settings__cont
